@@ -1,0 +1,40 @@
+.note
+{
+    background-color: white;
+    box-shadow: 0px 3px 10px -3px var(--color-secondary);
+
+    padding: 10px;
+    border-radius: 7px;
+
+    transition: 0.3s;
+    will-change: transform, boxshadow, font-size;
+    cursor: pointer;
+
+    min-width: 30vw;
+    max-width: 40vw;
+    width: fit-content;
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+.note h4
+{
+    font-size: 0.875rem;
+}
+
+.note p
+{
+    font-size: 0.875rem;
+    white-space: pre-line;
+}
+
+.note:hover
+{
+    box-shadow: 0px 3px 18px -3px var(--color-secondary);
+    transform: scale(1.01);
+}
+
+.note:active
+{
+    transform: scale(0.9);
+}

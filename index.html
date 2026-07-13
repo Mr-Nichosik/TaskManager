@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskManager</title>
+
+  <template id="note-template">
+    <article class="note">
+      <h4 class="note-title"></h4>
+      <p class="note-text"></p>
+    </article>
+  </template>
+</head>
+
+<body>
+  <header>
+    <!-- <div class="header-search-block">
+      <textarea id="search-input"></textarea>
+    </div> -->
+
+    <div class="burger-button-block">
+      <button id="burger-button">☰</button>
+    </div>
+
+    <div class="header-title-block">
+      <h1>Task Manager</h1>
+    </div>
+
+    <div class="header-search-block">
+      <button id="search-button">⌕</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="content">
+      <div class="new-task-field">
+        <textarea id="new-task-textarea" rows="1" placeholder="Note..."></textarea>
+      </div>
+
+      <div class="pinned-tasks-list-block active visible">
+        <h4 class="tasks-block-title">Pinned</h4>
+
+        <div class="pinned-tasks-block-content">
+
+        </div>
+      </div>
+
+      <div class="tasks-list-block">
+        <h4 class="tasks-block-title">Other</h4>
+
+        <div class="tasks-block-content">
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <div id="burger-menu-block">
+    <nav class="burger-menu">
+      <a class="burger-link">Dashboard</a>
+
+      <a class="burger-link">Task categories</a>
+
+      <a class="burger-link">Trash</a>
+
+      <button id="close-burger-button">🗙</button>
+    </nav>
+  </div>
+
+  <div id="note-edit-window">
+    <input id="note-edit-title-input" placeholder="Title">
+    <textarea id="note-edit-textarea" placeholder="Note..." rows="auto"></textarea>
+    <div class="note-edit-window-buttons-block">
+      <button id="pin-button" class="default-button">Pin</button>
+      <button id="save-button" class="default-button">Save</button>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
+  <script type="module" src="/src/scripts/index.js"></script>
+</body>
+
+</html>

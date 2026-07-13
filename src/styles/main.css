@@ -1,0 +1,84 @@
+@import url("./components/header.css");
+@import url("./components/burger.css");
+
+:root
+{
+    --p1: 1.125rem;
+
+    --h1: 2rem;
+
+    --color-secondary: #808080;
+}
+
+@font-face
+{
+    font-family: "Poppins-Regular";
+    src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+*
+{
+    margin: 0;
+
+    -webkit-tap-highlight-color: transparent;
+
+    font-family: "Poppins-Regular";
+}
+
+html
+{
+    font-size: 1rem;
+}
+
+body
+{
+    height: 100vh;
+}
+
+button
+{
+    user-select: none;
+    transition: 0.3s;
+    will-change: transform;
+}
+
+button:active
+{
+    transition: 0.1;
+    transform: scale(0.9);
+}
+
+.default-button
+{
+    font-size: 0.9375rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 7px;
+
+    padding: 7px;
+}
+
+#overlay
+{
+    visibility: hidden;
+    opacity: 0;
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.284);
+    transition: 0.5s;
+}
+
+#overlay.visible
+{
+    visibility: visible;
+    opacity: 1;
+}
