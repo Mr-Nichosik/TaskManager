@@ -18,7 +18,10 @@ main .content
 #new-task-block
 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 2vh;
     padding-bottom: 20px;
     padding-top: 20px;
 }
@@ -46,7 +49,7 @@ main .content
     transform: scale(0.992);
 }
 
-#new-task-textarea:focus
+#new-task-textarea.focused
 {
     transform: none;
 
@@ -54,13 +57,24 @@ main .content
 
     font-size: 1rem;
     width: 100vw;
-    height: 50vh;
+    height: 70vh;
     box-shadow: none;
 
     border: none;
     border-top: 2px solid rgb(220, 220, 220);
     border-bottom: 2px solid rgb(220, 220, 220);
     border-radius: 0;
+}
+
+#save-new-task-button
+{
+    display: none;
+    width: 40vw;
+}
+
+#save-new-task-button.visible
+{
+    display: block;
 }
 
 .pinned-tasks-list-block
@@ -90,6 +104,8 @@ main .content
 .pinned-tasks-block-content
 {
     display: flex;
+    flex-wrap: wrap;
+    gap: 4vw;
 }
 
 .tasks-list-block
@@ -98,4 +114,11 @@ main .content
     padding: 10px 20px;
     flex-direction: column;
     gap: 5px;
+}
+
+.tasks-block-content
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4vw;
 }

@@ -68,5 +68,10 @@
 
 #pin-button
 {
-    min-width: 20vw;
+    min-width: 16vw;
+}
+
+#remove-button
+{
+    min-width: 16vw;
 }

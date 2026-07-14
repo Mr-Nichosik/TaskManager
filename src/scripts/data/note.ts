@@ -4,7 +4,7 @@ export type NoteData = {
     title: string;
     text: string;
     pinned: boolean;
-    tags: Array<string>;
+    tags: string[];
 }
 
 export class Note
@@ -13,9 +13,9 @@ export class Note
     public title: string;
     public text: string;
     public pinned: boolean;
-    public tags: Array<string>;
+    public tags: string[];
 
-    constructor(id: number, title: string, text: string, pinned: boolean = false, tags: Array<string> = [])
+    constructor(id: number = 0, title: string = "default_title", text: string = "text", pinned: boolean = false, tags: string[] = [])
     {
         this.id = id;
         this.title = title;

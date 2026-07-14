@@ -36,7 +36,7 @@ export class NoteRenderer
 
             noteElement.addEventListener("click", () =>
             {
-                this.editWindow.Open();
+                this.editWindow.Open(note);
             });
 
             if (note.pinned) { this.pinnedContainer.append(noteElement); }

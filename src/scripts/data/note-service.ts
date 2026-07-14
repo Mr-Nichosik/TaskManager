@@ -1,6 +1,7 @@
 
 import { Note, NoteData } from "./note";
 import { Storage } from "./storage";
+import { renderer } from "../index";
 
 export class NoteService
 {
@@ -18,6 +19,13 @@ export class NoteService
     {
         note.id = NoteService.generateID();
         Storage.saveNote(note);
+        renderer.Render();
+    }
+
+    public static edit(note: Note)
+    {
+        Storage.editNote(note);
+        renderer.Render();
     }
 
     private static generateID(): number

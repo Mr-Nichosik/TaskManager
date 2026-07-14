@@ -1,55 +1,68 @@
 
+import { NoteService } from "../data/note-service";
+import { Note } from "../data/note";
+
 export class EditWindow
 {
-    private Window: HTMLElement;
-    private Overlay: HTMLElement;
-    private SaveButton: HTMLElement;
-    private TitleInput: HTMLInputElement;
-    private Textarea: HTMLTextAreaElement;
-    // private CurrentNote;
-    // private OnSave;
+    private window: HTMLElement;
+    private overlay: HTMLElement;
+
+    private titleInput: HTMLInputElement;
+    private textarea: HTMLTextAreaElement;
+
+    private saveButton: HTMLButtonElement;
+    private pinButton: HTMLButtonElement;
+    private removeButton: HTMLButtonElement;
+
+    private currentNote: Note;
 
     constructor()
     {
-        this.Window = document.getElementById("note-edit-window")!;
-        this.Overlay = document.getElementById("overlay")!;
-        this.SaveButton = document.getElementById("save-button")!;
+        this.window = document.getElementById("note-edit-window")!;
+        this.overlay = document.getElementById("overlay")!;
 
-        this.TitleInput = document.getElementById("note-edit-title-input") as HTMLInputElement;
-        this.Textarea = document.getElementById("note-edit-textarea") as HTMLTextAreaElement;
+        this.titleInput = document.getElementById("note-edit-title-input") as HTMLInputElement;
+        this.textarea = document.getElementById("note-edit-textarea") as HTMLTextAreaElement;
 
-        // this.CurrentNote = null;
+        this.saveButton = document.getElementById("save-button") as HTMLButtonElement;
+        this.pinButton = document.getElementById("pin-button") as HTMLButtonElement;
+        this.removeButton = document.getElementById("remove-button") as HTMLButtonElement;
 
-        // this.OnSave = onSave;
+        this.currentNote = new Note();
 
-        this.SaveButton.addEventListener("click", () => this.Close());
+        this.saveButton.addEventListener("click", () => this.Close());
+        this.pinButton.addEventListener("click", () => this.Pin());
     }
 
-    Open()
+    Open(note: Note)
     {
-        // this.CurrentNote = note;
+        this.currentNote = note;
 
-        // this.TitleInput.value = note.title;
-        // this.Textarea.value = note.text;
+        this.titleInput.value = note.title;
+        this.textarea.value = note.text;
 
-        this.Window.classList.add("visible");
-        this.Overlay.classList.add("visible")
+        this.window.classList.add("visible");
+        this.overlay.classList.add("visible")
     }
 
     Close()
     {
-        this.Window.classList.remove("visible");
-        this.Overlay.classList.remove("visible");
+        this.window.classList.remove("visible");
+        this.overlay.classList.remove("visible");
 
-        // this.Save();
+        this.Save();
     }
 
     Save()
     {
-        // this.CurrentNote.title = this.TitleInput.value;
-        // this.CurrentNote.text = this.Textarea.value;
+        this.currentNote.title = this.titleInput.value;
+        this.currentNote.text = this.textarea.value;
 
-        // this.OnSave();
-        // SaveNotes(this.CurrentNote);
+        NoteService.edit(this.currentNote);
+    }
+
+    Pin()
+    {
+        this.currentNote.pinned = !this.currentNote.pinned;
     }
 }
