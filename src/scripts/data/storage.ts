@@ -4,6 +4,7 @@ import { NoteData, Note } from "./note";
 export class Storage
 {
     private static readonly STORAGE_KEY: string = "notes"
+    private static readonly TRASH_KEY: string = "trash"
 
     public static loadAllNotes(): Note[]
     {
@@ -11,7 +12,6 @@ export class Storage
 
         for (const note of Storage.rawLoad())
         {
-            // console.log(note);
             notes.push(Note.fromObject(note));
         }
 
@@ -49,6 +49,27 @@ export class Storage
         console.warn("no elements were changed");
     }
 
+    public static removeNote(note: Note)
+    {
+        const data = Storage.rawLoad();
+        for (let i = 0; i < data.length; i++)
+        {
+            if (data[i].id === note.id)
+            {
+                const trash = Storage.loadTrash();
+                console.log(trash)
+                trash.push(note);
+                console.log(trash);
+                Storage.saveTrash(trash);
+
+                Storage.saveData(data.filter(note => note.id !== data[i].id));
+                return;
+            }
+        }
+
+        console.warn("no elements were removed");
+    }
+
     private static rawLoad(): NoteData[]
     {
         const data: string | null = localStorage.getItem(this.STORAGE_KEY);
@@ -56,6 +77,20 @@ export class Storage
         if (data) { return JSON.parse(data); }
 
         return [];
+    }
+
+    private static loadTrash(): NoteData[]
+    {
+        const data: string | null = localStorage.getItem(this.TRASH_KEY);
+
+        if (data) { return JSON.parse(data); }
+
+        return [];
+    }
+
+    private static saveTrash(data: NoteData[])
+    {
+        localStorage.setItem(Storage.TRASH_KEY, JSON.stringify(data));
     }
 
     private static saveData(data: NoteData[])

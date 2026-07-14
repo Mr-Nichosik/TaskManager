@@ -28,6 +28,12 @@ export class NoteService
         renderer.Render();
     }
 
+    public static remove(note: Note)
+    {
+        Storage.removeNote(note);
+        renderer.Render();
+    }
+
     private static generateID(): number
     {
         return Date.now()

@@ -11,3 +11,5 @@ const editWindow = new EditWindow();
 export const renderer = new NoteRenderer(editWindow);
 
 const newTaskField = new NewTaskField();
+
+console.log("started");

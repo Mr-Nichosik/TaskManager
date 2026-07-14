@@ -30,8 +30,9 @@ export class EditWindow
 
         this.currentNote = new Note();
 
-        this.saveButton.addEventListener("click", () => this.Close());
+        this.saveButton.addEventListener("click", () => this.Save());
         this.pinButton.addEventListener("click", () => this.Pin());
+        this.removeButton.addEventListener("click", () => this.Remove());
     }
 
     Open(note: Note)
@@ -45,14 +46,6 @@ export class EditWindow
         this.overlay.classList.add("visible")
     }
 
-    Close()
-    {
-        this.window.classList.remove("visible");
-        this.overlay.classList.remove("visible");
-
-        this.Save();
-    }
-
     Save()
     {
         this.currentNote.title = this.titleInput.value;
@@ -61,8 +54,20 @@ export class EditWindow
         NoteService.edit(this.currentNote);
     }
 
+    Close()
+    {
+        this.window.classList.remove("visible");
+        this.overlay.classList.remove("visible");
+    }
+
     Pin()
     {
         this.currentNote.pinned = !this.currentNote.pinned;
+    }
+
+    Remove()
+    {
+        NoteService.remove(this.currentNote);
+        this.Close();
     }
 }
