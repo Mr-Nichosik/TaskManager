@@ -1,0 +1,25 @@
+{
+    "compilerOptions":
+    {
+        "outDir": "./dist/",
+        "rootDir": "./src",
+        
+        "target": "esnext",
+        "strict": false,
+        "allowJs": true,
+        "noEmit": false,
+    },
+
+    "include": 
+    [
+        "src/**/*"
+    ],
+
+    "exclude":
+    [
+        "node_modules",
+        "dist",
+        ".github",
+        ".vscode"
+    ]
+}

@@ -1,4 +1,6 @@
 
+import { SaveNotes } from "../data/storage";
+
 export class EditWindow
 {
     Window;
@@ -42,7 +44,7 @@ export class EditWindow
         this.Window.classList.remove("visible");
         this.Overlay.classList.remove("visible");
 
-        this.Save()
+        this.Save();
     }
 
     Save()
@@ -50,6 +52,7 @@ export class EditWindow
         this.CurrentNote.title = this.TitleInput.value;
         this.CurrentNote.text = this.Textarea.value;
 
-        this.OnSave()
+        this.OnSave();
+        SaveNotes(this.CurrentNote);
     }
 }

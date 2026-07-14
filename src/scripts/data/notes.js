@@ -1,9 +1,16 @@
 
-export const notes = [
-    {
-        id: 1,
-        title: "Test",
-        text: "note text\nto do list\nn1",
-        pinned: false
-    }
-]
+import { LoadNotes, SaveNotes } from "./storage"
+
+export let notes = LoadNotes();
+
+// if (notes.length === 0)
+// {
+//     notes = [
+//         {
+//             id: 1,
+//             title: "Test",
+//             text: "default",
+//             pinned: true
+//         }
+//     ];
+// }
