@@ -1,7 +1,7 @@
 
 import { Note, NoteData } from "./note";
 import { Storage } from "./storage";
-import { renderer } from "../index";
+import { application } from "../index";
 
 export class NoteService
 {
@@ -19,19 +19,19 @@ export class NoteService
     {
         note.id = NoteService.generateID();
         Storage.saveNote(note);
-        renderer.Render();
+        application.refresh();
     }
 
     public static edit(note: Note)
     {
         Storage.editNote(note);
-        renderer.Render();
+        application.refresh();
     }
 
     public static remove(note: Note)
     {
         Storage.removeNote(note);
-        renderer.Render();
+        application.refresh();
     }
 
     private static generateID(): number

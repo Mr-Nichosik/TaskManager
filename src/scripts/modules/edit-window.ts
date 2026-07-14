@@ -52,6 +52,8 @@ export class EditWindow
         this.currentNote.text = this.textarea.value;
 
         NoteService.edit(this.currentNote);
+
+        this.Close();
     }
 
     Close()

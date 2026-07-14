@@ -58,7 +58,7 @@ export class Storage
             {
                 const trash = Storage.loadTrash();
                 console.log(trash)
-                trash.push(note);
+                trash.push(note.toObject());
                 console.log(trash);
                 Storage.saveTrash(trash);
 

@@ -5,11 +5,31 @@ import { BurgerMenu } from "./modules/burger";
 import { EditWindow } from "./modules/edit-window";
 import { NoteRenderer } from "./modules/note-renderer";
 import { NewTaskField } from "./modules/new-task-filed";
+import { NoteService } from "./data/note-service";
 
-const menu = new BurgerMenu();
-const editWindow = new EditWindow();
-export const renderer = new NoteRenderer(editWindow);
+class App
+{ 
+    menu;
+    editWindow;
+    renderer;
+    newTaskField;
 
-const newTaskField = new NewTaskField();
+    constructor()
+    {
+        this.menu = new BurgerMenu();
+        this.editWindow = new EditWindow();
+        this.renderer = new NoteRenderer(this.editWindow);
+        this.newTaskField = new NewTaskField();
 
-console.log("started");
+        this.refresh();
+
+        console.log("started");
+    }
+
+    refresh()
+    {
+        this.renderer.Render(NoteService.getAll());
+    }
+}
+
+export const application = new App();

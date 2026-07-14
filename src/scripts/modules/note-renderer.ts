@@ -1,6 +1,7 @@
 
 import { NoteService } from "../data/note-service"
 import { EditWindow } from "./edit-window";
+import { Note } from "../data/note";
 
 export class NoteRenderer
 {
@@ -19,12 +20,10 @@ export class NoteRenderer
         this.Render();
     }
 
-    Render()
+    Render(notes: Note[] = [])
     {
         this.defaultContainer.innerHTML = "";
         this.pinnedContainer.innerHTML = "";
-
-        const notes = NoteService.getAll();
 
         notes.forEach(note =>
         {
