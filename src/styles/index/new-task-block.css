@@ -1,20 +1,3 @@
-@import url("./main.css");
-@import url("./components/note.css");
-@import url("./components/note-edit-window.css");
-
-*,
-*::before,
-*::after
-{
-    box-sizing: border-box;
-}
-
-main .content
-{
-    display: flex;
-    flex-direction: column;
-}
-
 #new-task-block
 {
     display: flex;
@@ -33,6 +16,7 @@ main .content
     border-radius: 7px;
     box-shadow: 0px 3px 10px -3px var(--color-secondary);
     width: 80vw;
+    max-width: 1000px;
     outline: none;
 
     transition: 0.1s;
@@ -75,50 +59,4 @@ main .content
 #save-new-task-button.visible
 {
     display: block;
-}
-
-.pinned-tasks-list-block
-{
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    padding: 10px 20px;
-
-    flex-direction: column;
-    gap: 5px;
-
-    transition: 0.3s;
-}
-
-.pinned-tasks-list-block.active
-{
-    display: flex;
-}
-
-.pinned-tasks-list-block.visible
-{
-    visibility: visible;
-    opacity: 1;
-}
-
-.pinned-tasks-block-content
-{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4vw;
-}
-
-.tasks-list-block
-{
-    display: flex;
-    padding: 10px 20px;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.tasks-block-content
-{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4vw;
 }

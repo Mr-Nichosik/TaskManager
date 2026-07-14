@@ -1,5 +1,6 @@
 @import url("./components/header.css");
 @import url("./components/burger.css");
+@import url("./components/note.css");
 
 :root
 {
@@ -36,6 +37,21 @@ html
 body
 {
     height: 100vh;
+}
+
+main
+{
+    display: flex;
+}
+
+main section
+{
+    flex-grow: 1;
+}
+
+.side-bar
+{
+    display: none;
 }
 
 button

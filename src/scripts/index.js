@@ -1,5 +1,5 @@
 
-import "../styles/index.css";
+import "../styles/index/index.css";
 
 import { BurgerMenu } from "./modules/burger";
 import { EditWindow } from "./modules/edit-window";
