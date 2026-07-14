@@ -15,7 +15,7 @@ main .content
     flex-direction: column;
 }
 
-.new-task-field
+#new-task-block
 {
     display: flex;
     justify-content: center;

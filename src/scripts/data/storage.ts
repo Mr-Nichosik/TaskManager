@@ -1,34 +1,47 @@
 
-const STORAGE_KEY = "notes"
+import { NoteData, Note } from "./note";
 
-export function SaveNotes(newNote)
+export class Storage
 {
-    let data = LoadNotes();
+    private static readonly STORAGE_KEY: string = "notes"
 
-    let isNew: boolean = true
-
-    data = data.map(note => {
-        if (note.id == newNote)
-        {
-            note = newNote;
-            isNew = false;
-        }
-    });
-
-    if (!isNew)
+    public static loadAllNotes(): Note[]
     {
-        data.push(newNote);
+        const notes: Note[] = []
+
+        for (const note of Storage.rawLoad())
+        {
+            console.log(note);
+            notes.push(Note.fromObject(note));
+        }
+
+        return notes;
     }
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-}
+    public static saveNote(note: Note)
+    {
+        const data = Storage.rawLoad();
+        data.push(note.toObject());
 
-export function LoadNotes()
-{
-    const data = localStorage.getItem(STORAGE_KEY);
+        Storage.saveData(data);
+    }
 
-    if (!data)
+    public static editNote(note: NoteData)
+    {
+
+    }
+
+    private static rawLoad(): NoteData[]
+    {
+        const data: string | null = localStorage.getItem(this.STORAGE_KEY);
+
+        if (data) { return JSON.parse(data); }
+
         return [];
+    }
 
-    return JSON.parse(data);
+    private static saveData(data: NoteData[])
+    {
+        localStorage.setItem(Storage.STORAGE_KEY, JSON.stringify(data));
+    }
 }
