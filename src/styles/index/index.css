@@ -2,33 +2,22 @@
 @import url("./note-edit-window.css");
 @import url("./new-task-block.css");
 
-*,
-*::before,
-*::after
-{
-    box-sizing: border-box;
-}
-
 main .content
 {
     display: flex;
     flex-direction: column;
 }
 
-.tasks-block-title
+.content-container-title
 {
     user-select: none;
 }
 
 .pinned-tasks-list-block
 {
-    display: none;
     visibility: hidden;
     opacity: 0;
-    padding: 10px 20px;
-
-    flex-direction: column;
-    gap: 5px;
+    display: none;
 
     transition: 0.3s;
 }
@@ -42,26 +31,4 @@ main .content
 {
     visibility: visible;
     opacity: 1;
-}
-
-.pinned-tasks-block-content
-{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4vw;
-}
-
-.tasks-list-block
-{
-    display: flex;
-    padding: 10px 20px;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.tasks-block-content
-{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4vw;
 }

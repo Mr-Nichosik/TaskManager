@@ -8,7 +8,7 @@ import { NewTaskField } from "./modules/new-task-filed";
 import { NoteService } from "./data/note-service";
 
 class App
-{ 
+{
     menu;
     editWindow;
     renderer;
@@ -17,9 +17,9 @@ class App
     constructor()
     {
         this.menu = new BurgerMenu();
+        this.newTaskField = new NewTaskField();
         this.editWindow = new EditWindow();
         this.renderer = new NoteRenderer(this.editWindow);
-        this.newTaskField = new NewTaskField();
 
         this.refresh();
 
