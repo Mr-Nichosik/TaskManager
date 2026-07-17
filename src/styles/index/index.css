@@ -1,4 +1,3 @@
-
 @import url("../main.css");
 @import url("./note-edit-window.css");
 @import url("./new-task-block.css");
@@ -14,6 +13,11 @@ main .content
 {
     display: flex;
     flex-direction: column;
+}
+
+.tasks-block-title
+{
+    user-select: none;
 }
 
 .pinned-tasks-list-block

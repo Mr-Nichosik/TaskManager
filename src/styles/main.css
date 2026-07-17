@@ -8,7 +8,10 @@
 
     --h1: 2rem;
 
-    --color-secondary: #808080;
+    --color-secondary: #A1A3AB;
+    --color-accent: #FF6767;
+    --color-bg: #f5f8ff;
+    --color-header: #f8f8f8;
 }
 
 @font-face
@@ -18,6 +21,23 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
+}
+
+::selection
+{
+    background-color: var(--color-accent);
+    color: white;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
 }
 
 *
@@ -37,21 +57,118 @@ html
 body
 {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* pc */
+    /* gap: 20px; */
+
+    align-items: stretch;
+    justify-content: stretch;
+
+    background-color: var(--color-bg);
 }
 
 main
 {
     display: flex;
+    justify-self: stretch;
+    align-self: stretch;
+
+    height: 100%;
+
+    overflow: hidden;
 }
 
 main section
 {
     flex-grow: 1;
+    height: 100%;
+    flex: 1;
+
+    /* pc */
+    /* padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px; */
+}
+
+.content-block
+{
+    /* pc */
+    /* border: 2px solid var(--color-secondary);
+    border-radius: 16px; */
+    height: 100%;
+
+    overflow-y: auto;
 }
 
 .side-bar
 {
     display: none;
+    border-radius: 10px;
+    box-shadow: px 3px 5px 0px var(--color-secondary);
+    width: 15vw;
+}
+
+.side-bar.visible
+{
+    /* display: block; */
+}
+
+.left-links-block
+{
+    background-color: black;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 20vh 1vw;
+    border-radius: 0px 10px 10px 0;
+}
+
+.sidebar-link
+{
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    padding: 13px;
+
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+
+    transition: 0.3s;
+    will-change: transform;
+}
+
+.sidebar-link:hover
+{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-link:active
+{
+    transition: 0.1s;
+    transform: scale(0.9);
+}
+
+.sidebar-link.active
+{
+    color: var(--color-accent);
+    background-color: white;
+}
+
+.sidebar-link img
+{
+    width: 16px;
+    height: 16px;
+
+    justify-self: center;
+    align-self: center;
 }
 
 button
@@ -73,6 +190,7 @@ button:active
     background-color: black;
     color: white;
     border: none;
+    outline: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 7px;
 
     padding: 7px;
@@ -82,6 +200,8 @@ button:active
 {
     visibility: hidden;
     opacity: 0;
+
+    backdrop-filter: blur(10px);
 
     position: fixed;
     width: 100vw;

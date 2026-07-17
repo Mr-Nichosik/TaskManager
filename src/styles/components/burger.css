@@ -63,6 +63,12 @@
     transform: scale(0.9);
 }
 
+.burger-link.active
+{
+    color: var(--color-accent);
+    background-color: white;
+}
+
 #close-burger-button
 {
     margin-top: 10px;

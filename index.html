@@ -22,60 +22,64 @@
     </div> -->
 
     <div class="burger-button-block">
-      <button id="burger-button">☰</button>
+      <button id="burger-button" class="header-button">☰</button>
     </div>
 
     <div class="header-title-block">
       <h1>Task Manager</h1>
     </div>
-
+    <!-- ⌕ -->
     <div class="header-search-block">
-      <button id="search-button">⌕</button>
+      <button id="search-button" class="header-button"><img src="./icons/search.svg"></button>
     </div>
   </header>
 
   <main>
-    <div class="side-bar">
+    <div class="side-bar visible">
       <nav class="left-links-block">
-        <a class="burger-link">Dashboard</a>
+        <a class="sidebar-link active"><img src="./icons/dashborad-active.svg">
+          <p>Dashboard</p>
+        </a>
 
-        <a class="burger-link">Task categories</a>
+        <a class="sidebar-link"><img src="./icons/tasks-categories.svg">
+          <p>Task categories</p>
+        </a>
 
-        <a class="burger-link">Trash</a>
+        <a class="sidebar-link"><img src="./icons/trash.svg">
+          <p>Trash</p>
+        </a>
       </nav>
     </div>
 
     <section class="content">
-      <div id="new-task-block">
-        <textarea id="new-task-textarea" rows="1" placeholder="Note..."></textarea>
-        <button class="default-button" id="save-new-task-button">Save</button>
-      </div>
-
-      <div class="pinned-tasks-list-block active visible">
-        <h4 class="tasks-block-title">Pinned</h4>
-
-        <div class="pinned-tasks-block-content">
-
+      <div class="content-block">
+        <div id="new-task-block">
+          <textarea id="new-task-textarea" rows="1" placeholder="Note..."></textarea>
+          <button class="default-button" id="save-new-task-button">Save</button>
         </div>
-      </div>
 
-      <div class="tasks-list-block">
-        <h4 class="tasks-block-title">Other</h4>
+        <div class="pinned-tasks-list-block active visible">
+          <h4 class="tasks-block-title">Pinned</h4>
 
-        <div class="tasks-block-content">
+          <div class="pinned-tasks-block-content">
 
+          </div>
+        </div>
+
+        <div class="tasks-list-block">
+          <h4 class="tasks-block-title">Other</h4>
+
+          <div class="tasks-block-content">
+
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-
-  </footer>
-
   <div id="burger-menu-block">
     <nav class="burger-menu">
-      <a class="burger-link">Dashboard</a>
+      <a class="burger-link active">Dashboard</a>
 
       <a class="burger-link">Task categories</a>
 

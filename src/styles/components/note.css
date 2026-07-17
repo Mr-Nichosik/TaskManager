@@ -7,7 +7,7 @@
     border-radius: 7px;
 
     transition: 0.3s;
-    will-change: transform, boxshadow, font-size;
+    will-change: transform, box-shadow;
     cursor: pointer;
 
     min-width: 10vw;
