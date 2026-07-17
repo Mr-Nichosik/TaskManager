@@ -1,0 +1,46 @@
+@media screen and (min-width: 1024px)
+{
+    body
+    {
+        gap: 20px;
+    }
+
+    #burger-button
+    {
+        display: none;
+    }
+
+    #search-input
+    {
+        display: unset;
+    }
+
+    .content
+    {
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+    }
+
+    .content-block
+    {
+        border: 2px solid var(--color-secondary);
+        border-radius: 16px;
+    }
+
+    main .side-bar
+    {
+        display: block;
+    }
+
+    #new-task-block #new-task-textarea
+    {
+        font-size: 1rem;
+    }
+
+    #note-edit-window #note-edit-title-input,
+    #note-edit-window #note-edit-textarea
+    {
+        font-size: 1rem;
+    }
+}

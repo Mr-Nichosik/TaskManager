@@ -1,6 +1,7 @@
 @import url("./components/header.css");
 @import url("./components/burger.css");
 @import url("./components/note.css");
+@import url("./adaptive/desktop.css");
 
 :root
 {
@@ -29,15 +30,17 @@
     color: white;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
+::-webkit-scrollbar
+{
+    width: 12px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
-  border-radius: 20px;
-  border: 3px solid transparent;
-  background-clip: content-box;
+::-webkit-scrollbar-thumb
+{
+    background: var(--color-accent);
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background-clip: content-box;
 }
 
 *
@@ -59,8 +62,6 @@ body
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* pc */
-    /* gap: 20px; */
 
     align-items: stretch;
     justify-content: stretch;
@@ -79,25 +80,16 @@ main
     overflow: hidden;
 }
 
-main section
+.content
 {
     flex-grow: 1;
     height: 100%;
     flex: 1;
-
-    /* pc */
-    /* padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 40px; */
 }
 
 .content-block
 {
-    /* pc */
-    /* border: 2px solid var(--color-secondary);
-    border-radius: 16px; */
     height: 100%;
-
     overflow-y: auto;
 }
 
@@ -105,13 +97,8 @@ main section
 {
     display: none;
     border-radius: 10px;
-    box-shadow: px 3px 5px 0px var(--color-secondary);
+    box-shadow: 0px 3px 5px 0px var(--color-secondary);
     width: 15vw;
-}
-
-.side-bar.visible
-{
-    /* display: block; */
 }
 
 .left-links-block
@@ -130,12 +117,14 @@ main section
 {
     display: flex;
     justify-content: start;
-    gap: 20px;
+    /* gap: 20px; */
+    gap: 10px;
 
     user-select: none;
     -webkit-user-drag: none;
 
-    padding: 13px;
+    /* padding: 13px; */
+    padding: 10px;
 
     border-radius: 7px;
     background-color: black;
@@ -176,12 +165,18 @@ button
     user-select: none;
     transition: 0.3s;
     will-change: transform;
+    cursor: pointer;
 }
 
 button:active
 {
     transition: 0.1;
     transform: scale(0.9);
+}
+
+a
+{
+    cursor: pointer;
 }
 
 .default-button
