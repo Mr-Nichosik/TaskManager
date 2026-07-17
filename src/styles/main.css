@@ -99,18 +99,27 @@ main
     border-radius: 10px;
     box-shadow: 0px 3px 5px 0px var(--color-secondary);
     width: 15vw;
+
+    background-color: black;
+    border-radius: 0px 10px 10px 0;
+
+    flex-direction: column;
+
+    padding-bottom: 40px;
 }
 
 .left-links-block
 {
-    background-color: black;
-
-    height: 100%;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     gap: 2vh;
     padding: 20vh 1vw;
-    border-radius: 0px 10px 10px 0;
+}
+
+.sidebar-github-link-block
+{
+    padding: 0 1vw;
 }
 
 .sidebar-link
@@ -132,6 +141,10 @@ main
 
     transition: 0.3s;
     will-change: transform;
+
+    width: 100%;
+
+    text-align: center;
 }
 
 .sidebar-link:hover
@@ -141,6 +154,7 @@ main
 
 .sidebar-link:active
 {
+    color: rgb(182, 180, 180);
     transition: 0.1s;
     transform: scale(0.9);
 }
@@ -149,6 +163,12 @@ main
 {
     color: var(--color-accent);
     background-color: white;
+}
+
+#sidebar-github-link
+{
+    text-decoration: none;
+    justify-content: center;
 }
 
 .sidebar-link img
@@ -177,6 +197,23 @@ button:active
 a
 {
     cursor: pointer;
+}
+
+.external-link
+{
+    text-decoration: none;
+    color: white;
+    transition: 0.1s;
+}
+
+.external-link:hover
+{
+    color: rgb(162, 162, 162);
+}
+
+.external-link:active
+{
+    color: rgb(86, 86, 86);
 }
 
 .default-button

@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Simple task manager app uses local storage in your browser.">
+
   <title>TaskManager</title>
 
   <template id="note-template">
@@ -27,25 +30,33 @@
 
     <div class="header-search-block">
       <input id="search-input" placeholder="Search your task here...">
-      <button id="search-button" class="header-button"><img src="./icons/search.svg"></button>
+      <button id="search-button" class="header-button"><img src="./icons/search.svg" alt="search"></button>
     </div>
   </header>
 
   <main>
-    <div class="side-bar visible">
+    <div class="side-bar">
       <nav class="left-links-block">
-        <a class="sidebar-link active"><img src="./icons/dashborad-active.svg">
+        <a class="sidebar-link active">
+          <img src="./icons/dashborad-active.svg" alt="dashboard">
           <p>Dashboard</p>
         </a>
 
-        <a class="sidebar-link"><img src="./icons/tasks-categories.svg">
+        <a class="sidebar-link">
+          <img src="./icons/tasks-categories.svg" alt="task categories">
           <p>Task categories</p>
         </a>
 
-        <a class="sidebar-link"><img src="./icons/trash.svg">
+        <a class="sidebar-link">
+          <img src="./icons/trash.svg" alt="trash">
           <p>Trash</p>
         </a>
       </nav>
+
+      <div class="sidebar-github-link-block">
+        <a id="sidebar-github-link" class="sidebar-link" target="_blank"
+          href="https://github.com/Mr-Nichosik/TaskManager">GtiHub</a>
+      </div>
     </div>
 
     <section class="content">
@@ -82,7 +93,9 @@
 
       <a class="burger-link">Trash</a>
 
-      <button id="close-burger-button">🗙</button>
+      <a class="burger-link" target="_blank" href="https://github.com/Mr-Nichosik/TaskManager">GitHub</a>
+
+      <button id="close-burger-button">✕</button>
     </nav>
   </div>
 

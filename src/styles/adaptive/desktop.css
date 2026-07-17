@@ -15,6 +15,11 @@
         display: unset;
     }
 
+    main .side-bar
+    {
+        display: flex;
+    }
+
     .content
     {
         padding-left: 40px;
@@ -28,9 +33,11 @@
         border-radius: 16px;
     }
 
-    main .side-bar
+    .note
     {
-        display: block;
+        min-width: 10vw;
+        max-width: 400px;
+        width: fit-content;
     }
 
     #new-task-block #new-task-textarea
@@ -42,5 +49,12 @@
     #note-edit-window #note-edit-textarea
     {
         font-size: 1rem;
+    }
+
+    #note-edit-window #note-edit-textarea,
+    #note-edit-window #note-edit-title-input,
+    #note-edit-window .note-edit-window-buttons-block
+    {
+        width: 80vw;
     }
 }

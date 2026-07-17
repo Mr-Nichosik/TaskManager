@@ -45,6 +45,8 @@
 {
     text-align: center;
     user-select: none;
+    text-decoration: none;
+    color: white;
 
     width: 200px;
     padding-top: 10px;
