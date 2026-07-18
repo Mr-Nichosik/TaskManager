@@ -22,8 +22,10 @@ Simple note manager inspired by Google Keep.
 - Vite
 - LocalStorage
 
-## ToDo
+## Roadmap
 
+- [x] CRUD
+- [x] Restore
 - [ ] Search
 - [ ] Tags, categories
 - [ ] Import/exprot json
