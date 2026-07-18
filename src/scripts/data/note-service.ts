@@ -1,8 +1,6 @@
 
 import { Note, NoteData } from "./note";
 import { Storage } from "./storage";
-// import { application } from "../index";
-// make interfaces for app classes
 
 export class NoteService
 {
@@ -16,7 +14,7 @@ export class NoteService
         const data: Note[] = [];
         for (const note of NoteService.getAll())
         {
-            if (note.pinned) { data.push(note) }
+            if (note.pinned) { data.push(note); }
         }
 
         return data;
@@ -27,7 +25,7 @@ export class NoteService
         const data: Note[] = [];
         for (const note of NoteService.getAll())
         {
-            if (note.pinned == false) { data.push(note) }
+            if (note.pinned == false) { data.push(note); }
         }
 
         return data;
@@ -54,6 +52,16 @@ export class NoteService
         Storage.removeNote(note);
     }
 
+    public static removeForever(note: Note)
+    {
+        Storage.removeNoteForever(note);
+    }
+
+    public static restore(note: Note)
+    {
+        Storage.restoreNote(note);
+    }
+
     public static getAllRemoved(): Note[]
     {
         return Storage.loadRemovedNotes();
@@ -61,6 +69,6 @@ export class NoteService
 
     private static generateID(): number
     {
-        return Date.now()
+        return Date.now();
     }
 }

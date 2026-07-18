@@ -1,4 +1,5 @@
 import { Note } from "../data/note";
+import { NoteService } from "../data/note-service";
 import { INoteViewer } from "../HTML-elements/note-viewer";
 
 export class RemovedNoteViwer implements INoteViewer
@@ -48,11 +49,17 @@ export class RemovedNoteViwer implements INoteViewer
 
     private Restore()
     {
+        NoteService.restore(this.currentNote);
+        this.callBack();
+
         this.Close();
     }
 
     private Remove()
     {
+        NoteService.removeForever(this.currentNote);
+        this.callBack();
+        
         this.Close();
     }
 

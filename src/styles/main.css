@@ -119,6 +119,7 @@ main
     display: flex;
     flex-wrap: wrap;
     gap: 4vw;
+    row-gap: 2vh;
 }
 
 .side-bar

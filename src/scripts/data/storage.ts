@@ -61,6 +61,7 @@ export class Storage
                 trash.push(note.toObject());
                 console.log(trash);
                 Storage.saveTrash(trash);
+                console.log(data);
 
                 Storage.saveData(data.filter(note => note.id !== data[i].id));
                 return;
@@ -80,6 +81,19 @@ export class Storage
         }
 
         return notes;
+    }
+
+    public static removeNoteForever(note: Note)
+    {
+        const removedNotes = Storage.loadTrash();
+        Storage.saveTrash(removedNotes.filter(element => element.id !== note.id));
+    }
+
+    public static restoreNote(note: Note)
+    {
+        note.pinned = false;
+        Storage.saveNote(note);
+        Storage.removeNoteForever(note);
     }
 
     private static rawLoad(): NoteData[]
