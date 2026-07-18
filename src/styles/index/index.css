@@ -8,12 +8,7 @@ main .content
     flex-direction: column;
 }
 
-.content-container-title
-{
-    user-select: none;
-}
-
-.pinned-tasks-list-block
+#pinned-tasks-block
 {
     visibility: hidden;
     opacity: 0;
@@ -22,12 +17,12 @@ main .content
     transition: 0.3s;
 }
 
-.pinned-tasks-list-block.active
+#pinned-tasks-block.active
 {
     display: flex;
 }
 
-.pinned-tasks-list-block.visible
+#pinned-tasks-block.visible
 {
     visibility: visible;
     opacity: 1;

@@ -100,6 +100,11 @@ main
     overflow-y: auto;
 }
 
+.content-container-title
+{
+    user-select: none;
+}
+
 .content-container-wrapper
 {
     display: flex;
@@ -110,7 +115,7 @@ main
 
 .content-container
 {
-        display: flex;
+    display: flex;
     flex-wrap: wrap;
     gap: 4vw;
 }

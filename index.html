@@ -66,18 +66,18 @@
           <button class="default-button" id="save-new-task-button">Save</button>
         </div>
 
-        <div class="content-container-wrapper pinned-tasks-list-block active visible ">
+        <div id="pinned-tasks-block" class="content-container-wrapper active visible">
           <h4 class="content-container-title">Pinned</h4>
 
-          <div class="content-container pinned-tasks-block-content">
+          <div id="pinned-tasks-container" class="content-container">
 
           </div>
         </div>
 
-        <div class="content-container-wrapper tasks-list-block">
+        <div class="content-container-wrapper">
           <h4 class="content-container-title">Other</h4>
 
-          <div class="content-container tasks-block-content">
+          <div id="tasks-container" class="content-container">
 
           </div>
         </div>
@@ -111,7 +111,7 @@
 
   <div id="overlay"></div>
 
-  <script type="module" src="./src/scripts/index.js"></script>
+  <script type="module" src="./src/scripts/index.ts"></script>
 </body>
 
 </html>

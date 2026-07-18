@@ -8,7 +8,7 @@ export class Storage
 
     public static loadAllNotes(): Note[]
     {
-        const notes: Note[] = []
+        const notes: Note[] = [];
 
         for (const note of Storage.rawLoad())
         {
@@ -68,6 +68,18 @@ export class Storage
         }
 
         console.warn("no elements were removed");
+    }
+
+    public static loadRemovedNotes(): Note[]
+    {
+        const notes: Note[] = [];
+
+        for (const note of Storage.loadTrash())
+        {
+            notes.push(Note.fromObject(note));
+        }
+
+        return notes;
     }
 
     private static rawLoad(): NoteData[]

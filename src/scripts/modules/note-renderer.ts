@@ -1,33 +1,37 @@
 
-import { NoteService } from "../data/note-service"
-import { EditWindow } from "./edit-window";
 import { Note } from "../data/note";
+import { NoteContainer } from "../HTML-elements/note-container";
+import { INoteViewer } from "../HTML-elements/note-viewer";
 
 export class NoteRenderer
 {
-    private readonly template: HTMLTemplateElement = document.getElementById("note-template") as HTMLTemplateElement;
+    private static readonly template: HTMLTemplateElement = document.getElementById("note-template") as HTMLTemplateElement;
 
-    private editWindow: EditWindow;
-    private defaultContainer: HTMLElement;
-    private pinnedContainer: HTMLElement;
+    // private editWindow: EditWindow;
+    // private pinnedContainer: HTMLElement;
+    // private defaultContainer: HTMLElement;
 
-    constructor(editWindow: EditWindow)
+    // editWindow: EditWindow
+    // note: NoteViewer, container
+    // constructor()
+    // {
+        // this.editWindow = editWindow;
+        // this.pinnedContainer = document.getElementById("pinned-tasks-container")!;
+        // this.defaultContainer = document.getElementById("tasks-container")!;
+
+        // this.Render();
+    // }
+
+    public static Render(notes: Note[] = [], container: NoteContainer, window: INoteViewer)
     {
-        this.editWindow = editWindow;
-        this.defaultContainer = document.querySelector(".tasks-block-content")!;
-        this.pinnedContainer = document.querySelector(".pinned-tasks-block-content")!;
+        // this.defaultContainer.innerHTML = "";
+        // this.pinnedContainer.innerHTML = "";
 
-        this.Render();
-    }
-
-    Render(notes: Note[] = [])
-    {
-        this.defaultContainer.innerHTML = "";
-        this.pinnedContainer.innerHTML = "";
+        container.setInnerHTML("");
 
         notes.forEach(note =>
         {
-            const noteElement = this.template.content.firstElementChild.cloneNode(true) as HTMLElement;
+            const noteElement = NoteRenderer.template.content.firstElementChild.cloneNode(true) as HTMLElement;
             noteElement.dataset.id = note.id.toString();
 
             noteElement.querySelector(".note-title").textContent = note.title;
@@ -35,11 +39,13 @@ export class NoteRenderer
 
             noteElement.addEventListener("click", () =>
             {
-                this.editWindow.Open(note);
+                window.Open(note);
             });
 
-            if (note.pinned) { this.pinnedContainer.append(noteElement); }
-            else { this.defaultContainer.append(noteElement); }
+            container.append(noteElement);
+
+            // if (note.pinned) { this.pinnedContainer.append(noteElement); }
+            // else { this.defaultContainer.append(noteElement); }
 
         });
     }

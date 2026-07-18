@@ -1,14 +1,15 @@
 
 import { NoteService } from "../data/note-service";
 import { Note } from "../data/note";
+import { INoteViewer } from "../HTML-elements/note-viewer";
 
-export class EditWindow
+export class EditWindow implements INoteViewer
 {
     private window: HTMLElement;
     private overlay: HTMLElement;
 
-    private titleInput: HTMLInputElement;
-    private textarea: HTMLTextAreaElement;
+    public titleInput: HTMLInputElement;
+    public textarea: HTMLTextAreaElement;
 
     private saveButton: HTMLButtonElement;
     private pinButton: HTMLButtonElement;
@@ -16,7 +17,9 @@ export class EditWindow
 
     private currentNote: Note;
 
-    constructor()
+    private callBack: CallableFunction;
+
+    public constructor(callBack: CallableFunction)
     {
         this.window = document.getElementById("note-edit-window")!;
         this.overlay = document.getElementById("overlay")!;
@@ -30,12 +33,14 @@ export class EditWindow
 
         this.currentNote = new Note();
 
+        this.callBack = callBack;
+
         this.saveButton.addEventListener("click", () => this.Save());
         this.pinButton.addEventListener("click", () => this.Pin());
         this.removeButton.addEventListener("click", () => this.Remove());
     }
 
-    Open(note: Note)
+    public Open(note: Note)
     {
         this.currentNote = note;
 
@@ -46,30 +51,33 @@ export class EditWindow
         this.overlay.classList.add("visible")
     }
 
-    Save()
+    private Save()
     {
         this.currentNote.title = this.titleInput.value;
         this.currentNote.text = this.textarea.value;
 
         NoteService.edit(this.currentNote);
+        this.callBack();
 
         this.Close();
     }
 
-    Close()
+    private Close()
     {
         this.window.classList.remove("visible");
         this.overlay.classList.remove("visible");
     }
 
-    Pin()
+    private Pin()
     {
         this.currentNote.pinned = !this.currentNote.pinned;
     }
 
-    Remove()
+    private Remove()
     {
         NoteService.remove(this.currentNote);
+        this.callBack();
+
         this.Close();
     }
 }
