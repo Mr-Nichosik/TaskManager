@@ -1,1 +1,12 @@
 @import url("../main.css");
+@import url("../components/note-viewer.css");
+
+#restore-button
+{
+    flex: 1; 
+}
+
+#remove-button
+{
+    flex: 1;
+}

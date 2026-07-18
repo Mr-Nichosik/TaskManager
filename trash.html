@@ -63,7 +63,7 @@
         <div class="content-container-wrapper">
           <h4 class="content-container-title">Trash</h4>
 
-          <div class="content-container">
+          <div id="removed-notes-container" class="content-container">
 
           </div>
         </div>
@@ -85,9 +85,19 @@
     </nav>
   </div>
 
+  <div id="note-viewer" class="note-viewer">
+    <input id="note-viewer-title-input" class="note-viewer-title-input" placeholder="Title">
+    <textarea id="note-viewer-textarea" class="note-viewer-textarea" placeholder="Note..." rows="auto"></textarea>
+
+    <div class="note-viewer-buttons-block">
+      <button id="restore-button" class="default-button">Restore</button>
+      <button id="remove-button" class="default-button">Delete forever</button>
+    </div>
+  </div>
+
   <div id="overlay"></div>
 
-  <script type="module" src="./src/scripts/trash-page.js"></script>
+  <script type="module" src="./src/scripts/trash-page/trash-page.ts"></script>
 </body>
 
 </html>

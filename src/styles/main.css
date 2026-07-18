@@ -1,6 +1,7 @@
 @import url("./components/header.css");
 @import url("./components/burger.css");
 @import url("./components/note.css");
+@import url("./components/note-viewer.css");
 @import url("./adaptive/desktop.css");
 
 :root
