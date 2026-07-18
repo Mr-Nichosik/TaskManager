@@ -91,7 +91,6 @@ export class Storage
 
     public static restoreNote(note: Note)
     {
-        note.pinned = false;
         Storage.saveNote(note);
         Storage.removeNoteForever(note);
     }

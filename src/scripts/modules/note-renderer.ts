@@ -7,26 +7,8 @@ export class NoteRenderer
 {
     private static readonly template: HTMLTemplateElement = document.getElementById("note-template") as HTMLTemplateElement;
 
-    // private editWindow: EditWindow;
-    // private pinnedContainer: HTMLElement;
-    // private defaultContainer: HTMLElement;
-
-    // editWindow: EditWindow
-    // note: NoteViewer, container
-    // constructor()
-    // {
-        // this.editWindow = editWindow;
-        // this.pinnedContainer = document.getElementById("pinned-tasks-container")!;
-        // this.defaultContainer = document.getElementById("tasks-container")!;
-
-        // this.Render();
-    // }
-
     public static Render(notes: Note[] = [], container: NoteContainer, window: INoteViewer)
     {
-        // this.defaultContainer.innerHTML = "";
-        // this.pinnedContainer.innerHTML = "";
-
         container.setInnerHTML("");
 
         notes.forEach(note =>
@@ -43,10 +25,6 @@ export class NoteRenderer
             });
 
             container.append(noteElement);
-
-            // if (note.pinned) { this.pinnedContainer.append(noteElement); }
-            // else { this.defaultContainer.append(noteElement); }
-
         });
     }
 }

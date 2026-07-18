@@ -1,5 +1,5 @@
 
-import { Note, NoteData } from "./note";
+import { Note } from "./note";
 import { Storage } from "./storage";
 
 export class NoteService
@@ -11,24 +11,12 @@ export class NoteService
 
     public static getPinned(): Note[]
     {
-        const data: Note[] = [];
-        for (const note of NoteService.getAll())
-        {
-            if (note.pinned) { data.push(note); }
-        }
-
-        return data;
+        return Storage.loadAllNotes().filter(note => note.pinned);
     }
 
     public static getUnPinned(): Note[]
     {
-        const data: Note[] = [];
-        for (const note of NoteService.getAll())
-        {
-            if (note.pinned == false) { data.push(note); }
-        }
-
-        return data;
+        return Storage.loadAllNotes().filter(note => !note.pinned);
     }
 
     public static load(id: number)
