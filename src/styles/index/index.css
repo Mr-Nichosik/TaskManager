@@ -1,6 +1,7 @@
 @import url("../main.css");
 @import url("./note-edit-window.css");
 @import url("./new-task-block.css");
+@import url("../adaptive/index-desktop.css");
 
 main .content
 {

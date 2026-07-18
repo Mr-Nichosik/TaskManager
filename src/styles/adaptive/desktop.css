@@ -40,20 +40,15 @@
         width: fit-content;
     }
 
-    #new-task-block #new-task-textarea
+    .note-viewer .note-viewer-title-input,
+    .note-viewer .note-viewer-textarea
     {
         font-size: 1rem;
     }
 
-    #note-edit-window #note-edit-title-input,
-    #note-edit-window #note-edit-textarea
-    {
-        font-size: 1rem;
-    }
-
-    #note-edit-window #note-edit-textarea,
-    #note-edit-window #note-edit-title-input,
-    #note-edit-window .note-edit-window-buttons-block
+    .note-viewer .note-viewer-title-input,
+    .note-viewer .note-viewer-textarea,
+    .note-viewer .note-viewer-buttons-block
     {
         width: 80vw;
     }

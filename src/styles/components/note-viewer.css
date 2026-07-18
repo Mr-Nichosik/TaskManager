@@ -30,8 +30,8 @@
     opacity: 1;
 }
 
-.note-viewer-textarea,
 .note-viewer-title-input,
+.note-viewer-textarea,
 .note-viewer-buttons-block
 {
     width: 95vw;
