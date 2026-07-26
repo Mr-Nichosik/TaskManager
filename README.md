@@ -30,6 +30,7 @@ Simple note manager inspired by Google Keep.
 - [ ] Tags, categories
 - [ ] Import/exprot json
 - [ ] Dark theme
+- [ ] Notes date info
 
 ## Run
 
