@@ -7,13 +7,14 @@ import { NoteService } from "../data/note-service";
 import { NoteRenderer } from "../modules/note-renderer";
 import { NoteContainer } from "../HTML-elements/note-container";
 import { RemovedNoteViwer } from "./removed-note-viewer";
+import { Searcher } from "../modules/searcher";
 
 
 class TrashPage
 {
     private menu: BurgerMenu;
     private viewer: RemovedNoteViwer;
-
+    private searcher = new Searcher(this.refresh.bind(this));
     private notesContainer: NoteContainer;
 
     public constructor()
@@ -27,7 +28,10 @@ class TrashPage
 
     public refresh()
     {
-        NoteRenderer.Render(NoteService.getAllRemoved(), this.notesContainer, this.viewer);
+        const query = this.searcher.query;
+        const notes = NoteService.search(NoteService.getAllRemoved(), query);
+
+        NoteRenderer.Render(notes, this.notesContainer, this.viewer);
     }
 }
 
