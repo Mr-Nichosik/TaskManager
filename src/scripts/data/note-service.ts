@@ -55,6 +55,21 @@ export class NoteService
         return Storage.loadRemovedNotes();
     }
 
+    public static search(data: Note[], text: string): Note[]
+    {
+        const filteredList: Note[] = [];
+
+        for (const note of data)
+        {
+            if (note.text.includes(text) || note.title.includes(text))
+            {
+                filteredList.push(note);
+            }
+        }
+
+        return filteredList;
+    }
+
     private static generateID(): number
     {
         return Date.now();
