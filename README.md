@@ -26,7 +26,7 @@ Simple note manager inspired by Google Keep.
 
 - [x] CRUD
 - [x] Restore
-- [ ] Search
+- [x] Search
 - [ ] Tags, categories
 - [ ] Import/exprot json
 - [ ] Dark theme

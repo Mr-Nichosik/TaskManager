@@ -4,6 +4,7 @@ header
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
 
     user-select: none;
 
@@ -15,11 +16,36 @@ header
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    flex: 0 0 auto;
+    width: auto;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .header-title-block h1
 {
     font-size: 1.3rem;
+}
+
+.header-title-block.hidden
+{
+    flex: 0 0 0;
+    width: 0;
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header-title-block:not(.hidden)
+{
+    transition-delay: 0.2s;
 }
 
 .header-button
@@ -53,14 +79,19 @@ header
 {
     all: unset;
 
-    display: none;
-    padding: 10px;
-    width: 40vw;
+    padding: 0;
+    width: 0;
+
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
 }
 
 #search-input.visible
 {
-    display: unset;
+    padding: 10px;
+    width: 50vw;
+
+    transform: translateX(0);
 }
 
 #search-button

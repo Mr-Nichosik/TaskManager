@@ -1,7 +1,7 @@
 .note-viewer
 {
     z-index: 1001;
-    transform: scale(0);
+    transform: scale(0.4);
     visibility: hidden;
     opacity: 0;
 
