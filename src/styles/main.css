@@ -18,8 +18,7 @@
     --color-header: #f8f8f8;
     --color-sidebar: black;
 
-    /* --color-active-link: rgb(182, 180, 180); */
-    --color-sidebar-link-active-bg: white;
+    --color-link-active-bg: white;
 
     --color-button-bg: black;
 }
@@ -35,8 +34,7 @@
         --color-header: #151516;
         --color-sidebar: #151516;
 
-        /* --color-active-link: black; */
-        --color-sidebar-link-active-bg: #302c2c;
+        --color-link-active-bg: #302c2c;
 
         --color-button-bg: #151516;
     }
@@ -227,7 +225,7 @@ main
 .sidebar-link.active
 {
     color: var(--color-accent);
-    background-color: var(--color-sidebar-link-active-bg);
+    background-color: var(--color-link-active-bg);
 }
 
 .sidebar-link.active p

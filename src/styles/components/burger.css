@@ -68,7 +68,7 @@
 .burger-link.active
 {
     color: var(--color-accent);
-    background-color: white;
+    background-color: var(--color-link-active-bg);
 }
 
 #close-burger-button
