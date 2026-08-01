@@ -1,3 +1,13 @@
+
+@media (prefers-color-scheme: dark)
+{
+    .note-viewer .note-viewer-title-input,
+    .note-viewer .note-viewer-textarea
+    {
+        border: 2px solid var(--color-secondary);
+    }
+}
+
 .note-viewer
 {
     z-index: 1001;
@@ -61,7 +71,6 @@
     box-shadow: 0px 3px 10px -3px var(--color-secondary);
     outline: none;
 
-    /* height: 75vh; */
     flex: 1;
     min-height: 40svh;
     resize: none;

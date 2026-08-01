@@ -13,24 +13,37 @@
     --color-secondary: #A1A3AB;
     --color-accent: #FF6767;
     --color-bg: #f5f8ff;
+    --color-text: black;
+
     --color-header: #f8f8f8;
     --color-sidebar: black;
-    --active-link-color: rgb(182, 180, 180);
 
-    --color-text: black;
+    /* --color-active-link: rgb(182, 180, 180); */
+    --color-sidebar-link-active-bg: white;
+
+    --color-button-bg: black;
 }
 
 @media (prefers-color-scheme: dark)
 {
     :root
     {
-        --color-secondary: rgb(33, 32, 32);
-        --color-bg: #121212;
-        --color-header: #1c1c1c;
-        --color-sidebar: #1c1c1c;
-        --active-link-color: black;
-
+        --color-secondary: rgb(50, 49, 49);
+        --color-bg: #1b1b1d;
         --color-text: white;
+
+        --color-header: #151516;
+        --color-sidebar: #151516;
+
+        /* --color-active-link: black; */
+        --color-sidebar-link-active-bg: #302c2c;
+
+        --color-button-bg: #151516;
+    }
+
+    main .side-bar
+    {
+        box-shadow: none;
     }
 }
 
@@ -214,7 +227,7 @@ main
 .sidebar-link.active
 {
     color: var(--color-accent);
-    background-color: white;
+    background-color: var(--color-sidebar-link-active-bg);
 }
 
 .sidebar-link.active p
@@ -277,7 +290,7 @@ a
 .default-button
 {
     font-size: 0.9375rem;
-    background-color: black;
+    background-color: var(--color-button-bg);
     color: white;
     border: none;
     outline: 2px solid rgba(255, 255, 255, 0.15);

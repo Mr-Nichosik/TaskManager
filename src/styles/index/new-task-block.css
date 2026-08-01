@@ -49,8 +49,8 @@
     box-shadow: none;
 
     border: none;
-    border-top: 2px solid rgb(220, 220, 220);
-    border-bottom: 2px solid rgb(220, 220, 220);
+    border-top: 2px solid var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
     border-radius: 0;
 
     color: var(--color-text);
