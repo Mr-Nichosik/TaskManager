@@ -14,6 +14,24 @@
     --color-accent: #FF6767;
     --color-bg: #f5f8ff;
     --color-header: #f8f8f8;
+    --color-sidebar: black;
+    --active-link-color: rgb(182, 180, 180);
+
+    --color-text: black;
+}
+
+@media (prefers-color-scheme: dark)
+{
+    :root
+    {
+        --color-secondary: rgb(33, 32, 32);
+        --color-bg: #121212;
+        --color-header: #1c1c1c;
+        --color-sidebar: #1c1c1c;
+        --active-link-color: black;
+
+        --color-text: white;
+    }
 }
 
 @font-face
@@ -58,6 +76,8 @@
     -webkit-tap-highlight-color: transparent;
 
     font-family: "Poppins-Regular";
+
+    color: var(--color-text);
 }
 
 html
@@ -129,7 +149,7 @@ main
     box-shadow: 0px 3px 5px 0px var(--color-secondary);
     width: 15vw;
 
-    background-color: black;
+    background-color: var(--color-sidebar);
     border-radius: 0px 10px 10px 0;
 
     flex-direction: column;
@@ -165,8 +185,7 @@ main
     padding: 10px;
 
     border-radius: 7px;
-    background-color: black;
-    color: white;
+    background-color: var(--color-sidebar);
 
     transition: 0.3s;
     will-change: transform;
@@ -176,6 +195,11 @@ main
     text-align: center;
 }
 
+.sidebar-link p
+{
+    color: white;
+}
+
 .sidebar-link:hover
 {
     background-color: rgba(255, 255, 255, 0.1);
@@ -183,7 +207,6 @@ main
 
 .sidebar-link:active
 {
-    color: rgb(182, 180, 180);
     transition: 0.1s;
     transform: scale(0.9);
 }
@@ -192,6 +215,11 @@ main
 {
     color: var(--color-accent);
     background-color: white;
+}
+
+.sidebar-link.active p
+{
+    color: var(--color-accent);
 }
 
 #sidebar-github-link

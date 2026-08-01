@@ -19,6 +19,8 @@
     max-width: 1000px;
     outline: none;
 
+    background-color: var(--color-bg);
+
     transition: 0.1s;
 
     color: transparent;
@@ -51,7 +53,7 @@
     border-bottom: 2px solid rgb(220, 220, 220);
     border-radius: 0;
 
-    color: black;
+    color: var(--color-text);
 }
 
 #save-new-task-button
